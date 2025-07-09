@@ -8,14 +8,15 @@ await reset(db, schema)
 await seed(db, schema).refine((f) => {
   return {
     rooms: {
-      count: 20,
+      count: 8,
       columns: {
         name: f.companyName(),
         description: f.jobTitle(),
+        createdAt: f.date({ minDate: "2025-06-01", maxDate: "2025-07-09" }),
       },
     },
     questions: {
-      count: 20,
+      count: 80,
     },
   }
 })
