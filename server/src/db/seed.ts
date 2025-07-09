@@ -14,6 +14,9 @@ await seed(db, schema).refine((f) => {
         description: f.jobTitle(),
       },
     },
+    questions: {
+      count: 20,
+    },
   }
 })
 
